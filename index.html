@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gybrielle Gacilo · Frontend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="logo-text">Gybrielle.</div>
+    <div class="theme-toggle-wrap">
+      <span class="theme-label light-label"><i class="fas fa-sun"></i> Light</span>
+      <button class="theme-switch" id="themeToggle" aria-label="Toggle theme" role="switch" aria-checked="false">
+        <span class="switch-track">
+          <span class="switch-thumb">
+            <i class="fas fa-sun thumb-icon light-icon"></i>
+            <i class="fas fa-moon thumb-icon dark-icon"></i>
+          </span>
+          <span class="switch-stars">
+            <span></span><span></span><span></span>
+          </span>
+        </span>
+      </button>
+      <span class="theme-label dark-label"><i class="fas fa-moon"></i> Dark</span>
+    </div>
+  </header>
+
+  <div class="wrapper">
+
+    <!-- ══ SIDEBAR ══ -->
+    <div class="sidebar">
+      <div class="profile-card">
+
+        <!-- Profile: light = clean photo, dark = video (mp4) wi th image fallback -->
+        <div class="profile-img-container">
+          <div class="profile-photo-wrap">
+
+            <!-- BASE — light mode clean photo, always visible underneath -->
+            <img src="images/profile.jpg"
+                 alt="Gybrielle Nicole Gacilo"
+                 class="photo-base">
+
+            <!-- DARK LAYER — video plays when dark mode is on -->
+            <div class="photo-dark">
+              <video class="dark-video"
+                     muted playsinline
+                     poster="images/dark.mp4">
+                <source src="images/dark.mp4" type="video/mp4">
+                <!-- fallback if video fails -->
+                <img src="images/dark.mp4" alt="Gybrielle dark mode">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-name">
+          <h2>Gybrielle Gacilo</h2>
+          <div class="role">Frontend Developer</div>
+          <div class="available-badge"><span class="pulse-dot"></span> Available for work</div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Social links — replace # with your actual URLs -->
+        <div class="social-row">
+          <a class="social-icon" href="https://www.facebook.com/brxxllxx.pri" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/in/GybrielleGacilo" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a class="social-icon" href="https://x.com/_sltedcrml/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a class="social-icon" href="https://github.com/gaybriyelll/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="contact-list">
+          <a class="contact-item" href="tel:+6399923555088">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-text"><strong>Phone</strong>+63 999 2355 5088</div>
+          </a>
+          <a class="contact-item" href="mailto:nicole.gybrielle3@gmail.com">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-text"><strong>Email</strong>nicole.gybrielle3@gmail.com</div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-text"><strong>Location</strong>Calapan City, Oriental Mindoro</div>
+          </div>
+        </div>
+
+        <button class="download-btn" id="downloadResumeBtn">
+          <i class="fas fa-file-pdf"></i> Download Resume
+        </button>
+
+      </div>
+    </div>
+
+    <!-- ══ MAIN ══ -->
+    <div class="main">
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-tab="home" data-num="01"><i class="fas fa-home"></i> Home</button>
+        <button class="nav-tab" data-tab="resume" data-num="02"><i class="fas fa-file-alt"></i> Resume</button>
+        <button class="nav-tab" data-tab="work" data-num="03"><i class="fas fa-briefcase"></i> Project</button>
+        <button class="nav-tab" data-tab="contact" data-num="04"><i class="fas fa-envelope"></i> Contact</button>
+      </div>
+
+      <div class="content-card" id="tabContentContainer">
+
+        <!-- ── HOME ─────────────────────────── -->
+        <div class="tab-content-section active-content" id="home-content">
+          <h1 class="section-title">ABOUT ME</h1>
+
+          <div class="home-grid">
+            <div class="left-col">
+
+              <h2 class="subsection-title" style="margin-top:0;">What I do</h2>
+              <div class="cards-grid">
+                <div class="service-card">
+                  <h3><i class="fas fa-code"></i> Web Development</h3>
+                  <p>I enjoy building websites, experimenting with new ideas, and discovering better ways to create fast, scalable, and user-friendly applications. I'm always eager to dive into new projects and push my skills further with modern web technologies.</p>
+                </div>
+                <div class="service-card">
+                  <h3><i class="fas fa-paint-brush"></i> UI/UX Designing</h3>
+                  <p>Crafting visually appealing and intuitive user interfaces that offer a delightful user experience is something I'm truly passionate about.</p>
+                </div>
+              </div>
+
+              <h2 class="subsection-title"><i class="fas fa-heart"></i> Hobbies</h2>
+              <div class="hobbies-grid">
+                <div class="hobby-card">
+                  <div class="hobby-icon"><i class="fas fa-code"></i></div>
+                  <div class="hobby-content"><h4>Web Development</h4><p>Developing web applications and exploring new frameworks</p></div>
+                </div>
+                <div class="hobby-card">
+                  <div class="hobby-icon"><i class="fas fa-paint-brush"></i></div>
+                  <div class="hobby-content"><h4>UI/UX Design</h4><p>Creating intuitive and visually appealing user interfaces</p></div>
+                </div>
+                <div class="hobby-card">
+                  <div class="hobby-icon"><i class="fas fa-laptop-code"></i></div>
+                  <div class="hobby-content"><h4>Personal Projects</h4><p>Coding personal projects to learn and experiment</p></div>
+                </div>
+                <div class="hobby-card">
+                  <div class="hobby-icon"><i class="fas fa-microchip"></i></div>
+                  <div class="hobby-content"><h4>New Technologies</h4><p>Exploring emerging tech and development tools</p></div>
+                </div>
+                <div class="hobby-card">
+                  <div class="hobby-icon"><i class="fas fa-headphones"></i></div>
+                  <div class="hobby-content"><h4>Music</h4><p>Listening to music while coding and relaxing</p></div>
+                </div>
+              </div>
+
+              <h2 class="subsection-title"><i class="fas fa-star"></i> Interests</h2>
+              <div class="interests-grid">
+                <div class="interest-card">
+                  <div class="interest-icon"><i class="fas fa-robot"></i></div>
+                  <div class="interest-content"><h4>Artificial Intelligence</h4><p>Exploring AI/ML technologies and their real-world applications</p></div>
+                </div>
+                <div class="interest-card">
+                  <div class="interest-icon"><i class="fas fa-shield-alt"></i></div>
+                  <div class="interest-content"><h4>Cybersecurity</h4><p>Understanding security principles and ethical hacking</p></div>
+                </div>
+                <div class="interest-card">
+                  <div class="interest-icon"><i class="fas fa-code-branch"></i></div>
+                  <div class="interest-content"><h4>Software Development Innovations</h4><p>Keeping up with latest trends and innovations in software development</p></div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="right-col">
+              <div class="summary-card">
+                <p>An eager and diligent IT student seeking an entry-level role where I can apply my technical knowledge to deliver quality solutions and enhance user experience within efficient, innovative technology environments.</p>
+              </div>
+
+              <div class="tech-module">
+                <h4>Technical Expertise</h4>
+                <div class="tech-cluster">
+                  <h5>Languages</h5>
+                  <div class="tech-items"><span class="tech-item">C#</span><span class="tech-item">Java</span><span class="tech-item">Python</span><span class="tech-item">PHP</span><span class="tech-item">JavaScript</span></div>
+                </div>
+                <div class="tech-cluster">
+                  <h5>Frontend</h5>
+                  <div class="tech-items"><span class="tech-item">React</span><span class="tech-item">Bootstrap</span><span class="tech-item">Tailwind</span><span class="tech-item">Next.js</span><span class="tech-item">Vite</span></div>
+                </div>
+                <div class="tech-cluster">
+                  <h5>Backend</h5>
+                  <div class="tech-items"><span class="tech-item">Node.js</span><span class="tech-item">Django</span><span class="tech-item">Firebase</span></div>
+                </div>
+              </div>
+
+              <div class="timeline-module">
+                <h4>Experiences</h4>
+                <div class="timeline-professional">
+                  <div class="timeline-entry">
+                    <div class="timeline-marker"><div class="timeline-dot active-dot"></div><div class="timeline-line"></div></div>
+                    <div class="timeline-content"><h5>Frontend Developer Intern</h5><div class="company">New San Jose Builders, Inc</div><div class="date">Present</div></div>
+                  </div>
+                  <div class="timeline-entry">
+                    <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+                    <div class="timeline-content"><h5>BS Information Technology</h5><div class="company">Mindoro State University</div><div class="date">2022 – Present</div><div class="honors-mini"><span class="honor-tag"><i class="fas fa-trophy"></i> Dean's Lister</span></div></div>
+                  </div>
+                  <div class="timeline-entry">
+                    <div class="timeline-marker"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content"><h5>First line of code</h5><div class="company">Hello, World!</div><div class="date">2022</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RESUME ────────────────────────── -->
+        <div class="tab-content-section" id="resume-content">
+          <h1 class="section-title">RESUME</h1>
+
+          <div class="resume-grid">
+            <div class="resume-left">
+
+              <h2 class="subsection-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+              <div class="education-timeline">
+                <div class="edu-item">
+                  <div class="edu-year">2022 – Present</div>
+                  <div class="edu-content">
+                    <h3>BS Information Technology</h3>
+                    <p class="edu-institution">Mindoro State University</p>
+                    <p class="edu-desc">Dean's Lister</p>
+                  </div>
+                </div>
+                <div class="edu-item">
+                  <div class="edu-year">2020 – 2022</div>
+                  <div class="edu-content">
+                    <h3>Accountancy, Business and Management</h3>
+                    <p class="edu-institution">Oriental Mindoro National Highschool</p>
+                    <p class="edu-desc">With Honors</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="subsection-title"><i class="fas fa-certificate"></i> Certifications</h2>
+              <div class="certifications-container">
+                <div class="cert-item">
+                  <div class="cert-icon"><i class="fas fa-shield-halved"></i></div>
+                  <div class="cert-content"><h3>Fortinet Certified Associate in Cybersecurity</h3><p class="cert-issuer">Fortinet Training Institute</p><p class="cert-date">Issued 2025</p></div>
+                </div>
+                <div class="cert-item">
+                  <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                  <div class="cert-content"><h3>Fortinet Certified Fundamentals in Cybersecurity</h3><p class="cert-issuer">Fortinet Training Institute</p><p class="cert-date">Issued 2025</p></div>
+                </div>
+                <div class="cert-item hidden-cert">
+                  <div class="cert-icon"><i class="fab fa-python"></i></div>
+                  <div class="cert-content"><h3>Python Programming</h3><p class="cert-issuer">CodeChum</p><p class="cert-date">Issued 2025</p></div>
+                </div>
+                <div class="cert-item hidden-cert">
+                  <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                  <div class="cert-content"><h3>AI in Industries: Real-World Applications</h3><p class="cert-issuer">Terra Hertz</p><p class="cert-date">Issued 2025</p></div>
+                </div>
+                <button class="view-all-btn" id="viewAllCerts">
+                  <span class="btn-text">View All Certifications</span>
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+
+            </div>
+
+            <div class="resume-right">
+
+              <h2 class="subsection-title"><i class="fas fa-briefcase"></i> Experience</h2>
+              <div class="experience-timeline">
+                <div class="exp-item">
+                  <div class="exp-year">Present</div>
+                  <div class="exp-content">
+                    <h3>Frontend Developer Intern</h3>
+                    <p class="exp-company">New San Jose Builders, Inc</p>
+                    <ul class="exp-desc">
+                      <li>Building responsive web applications using React</li>
+                      <li>Collaborating with backend team for API integration</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="subsection-title"><i class="fas fa-heart"></i> Soft Skills</h2>
+              <div class="soft-skills-compact">
+                <span class="soft-skill-tag">Time Management</span>
+                <span class="soft-skill-tag">Mentorship</span>
+                <span class="soft-skill-tag">Communication</span>
+                <span class="soft-skill-tag">Flexibility</span>
+                <span class="soft-skill-tag">Research</span>
+                <span class="soft-skill-tag">Writing</span>
+                <span class="soft-skill-tag">Problem Solving</span>
+                <span class="soft-skill-tag">Team Collaboration</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PROJECTS ──────────────────────── -->
+        <div class="tab-content-section" id="work-content">
+          <h1 class="section-title">PROJECTS</h1>
+          <div class="projects-grid">
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/allserve.png" alt="Allserve" class="project-image"><div class="project-overlay"><span>Capstone</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3 class="project-title">Allserve</h3>
+                <p class="project-description">A health service platform connecting patients with healthcare providers. Features appointment scheduling, patient records, prescription management, and teleconsultation.</p>
+                <div class="project-tech"><span class="tech-badge">React+Vite</span><span class="tech-badge">Tailwind</span><span class="tech-badge">Firebase</span><span class="tech-badge">Firestore</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/slites.png" alt="Slites" class="project-image"><div class="project-overlay"><span>IoT</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3 class="project-title">Slites</h3>
+                <p class="project-description">Smart Lighting Intelligence for Targeted Energy Saving — IoT system with motion detection, ambient light sensing, and remote control via mobile app.</p>
+                <div class="project-tech"><span class="tech-badge">IoT</span><span class="tech-badge">Arduino</span><span class="tech-badge">MQTT</span><span class="tech-badge">Orange Pi</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/resumebuilder.png" alt="Resume Builder" class="project-image"><div class="project-overlay"><span>Web App</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-file-alt"></i></div>
+                <h3 class="project-title">Resume Builder</h3>
+                <p class="project-description">A web application for creating professional resumes with multiple templates, PDF export, and user profile management.</p>
+                <div class="project-tech"><span class="tech-badge">Django</span><span class="tech-badge">Python</span><span class="tech-badge">MongoDB</span><span class="tech-badge">Bootstrap</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/medconnect.png" alt="MedConnect" class="project-image"><div class="project-overlay"><span>Healthcare</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-hospital"></i></div>
+                <h3 class="project-title">MedConnect</h3>
+                <p class="project-description">Healthcare management system with appointment scheduling, patient records, and prescription management built with PHP.</p>
+                <div class="project-tech"><span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span><span class="tech-badge">HTML/CSS</span><span class="tech-badge">JS</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/mushroom.png" alt="Mushroom Cultivation" class="project-image"><div class="project-overlay"><span>IoT</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-seedling"></i></div>
+                <h3 class="project-title">Mushroom Cultivation</h3>
+                <p class="project-description">IoT-based monitoring with temperature/humidity tracking, automated misting, growth analytics, and mobile notifications.</p>
+                <div class="project-tech"><span class="tech-badge">IoT</span><span class="tech-badge">Arduino</span><span class="tech-badge">HTML/CSS</span><span class="tech-badge">Node.js</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/minsucms.png" alt="MinSU Clinic MS" class="project-image"><div class="project-overlay"><span>System</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-clinic-medical"></i></div>
+                <h3 class="project-title">MinSU Clinic Management System</h3>
+                <p class="project-description">Comprehensive clinic management for Mindoro State University — patient registration, appointments, EHR, prescriptions, and reporting.</p>
+                <div class="project-tech"><span class="tech-badge">C#</span><span class="tech-badge">MySQL</span><span class="tech-badge">HTML/CSS</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/apartment.png" alt="Apartment Rental" class="project-image"><div class="project-overlay"><span>Full Stack</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-building"></i></div>
+                <h3 class="project-title">Apartment Rental Management</h3>
+                <p class="project-description">Full-stack app for managing rentals — property listings, tenant management, lease agreements, rent tracking, and maintenance requests.</p>
+                <div class="project-tech"><span class="tech-badge">C#</span><span class="tech-badge">MySQL</span><span class="tech-badge">Windows Form</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/panchitancms.png" alt="PanChitan CMS" class="project-image"><div class="project-overlay"><span>CMS</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-store"></i></div>
+                <h3 class="project-title">PanChitan ni Unchang CMS</h3>
+                <p class="project-description">Content management system for a local business — product catalog, inventory, order processing, CRM, sales reporting, and role-based access.</p>
+                <div class="project-tech"><span class="tech-badge">WIX</span></div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-image-container"><img src="images/Kiosk.jpg" alt="KioskPharmaPOS" class="project-image"><div class="project-overlay"><span>POS</span></div></div>
+              <div class="project-content">
+                <div class="project-icon"><i class="fas fa-capsules"></i></div>
+                <h3 class="project-title">KioskPharmaPOS</h3>
+                <p class="project-description">Pharmacy Point of Sale with kiosk interface and Firebase real-time sync — inventory management, sales tracking, and receipt generation.</p>
+                <div class="project-tech"><span class="tech-badge">React</span><span class="tech-badge">Vite</span><span class="tech-badge">Firebase</span><span class="tech-badge">Tailwind</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── CONTACT ───────────────────────── -->
+        <div class="tab-content-section" id="contact-content">
+          <h1 class="section-title">CONTACT</h1>
+
+          <div class="contact-wrapper-single">
+            <div class="contact-form-container-single">
+              <p class="form-intro">
+                <i class="fas fa-paper-plane"></i>
+                I'm always open to new opportunities, collaborations, or just a tech chat. Send me a message and I'll get back to you soon.
+              </p>
+
+              <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label><i class="far fa-user"></i> Your Name</label>
+                    <input type="text" id="cf-name" name="from_name" placeholder="Your Name" required>
+                    <span class="field-err"></span>
+                  </div>
+                  <div class="form-group">
+                    <label><i class="far fa-envelope"></i> Your Email</label>
+                    <input type="email" id="cf-email" name="from_email" placeholder="youremail@example.com" required>
+                    <span class="field-err"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label><i class="far fa-comment"></i> Subject</label>
+                  <input type="text" id="cf-subject" name="subject" placeholder="What's this about?" required>
+                  <span class="field-err"></span>
+                </div>
+                <div class="form-group">
+                  <label><i class="far fa-edit"></i> Message</label>
+                  <textarea id="cf-message" name="message" placeholder="Write your message here..." required></textarea>
+                  <span class="field-err"></span>
+                </div>
+                <div class="form-footer">
+                  <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-label"><i class="fas fa-paper-plane"></i> Send Message</span>
+                    <span class="btn-sending" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+                  </button>
+                  <div id="formMessage" class="form-message"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /content-card -->
+    </div><!-- /main -->
+  </div><!-- /wrapper -->
+
+  <script src="js/script.js"></script>
+</body>
+</html>
