@@ -79,7 +79,7 @@ const EJS_TEMPLATE = 'template_ohap81z';
   document.getElementById('downloadResumeBtn').addEventListener('click', () => {
     const a = Object.assign(document.createElement('a'), {
       href: 'resume/Gybrielle Gacilo.pdf',
-      download: 'Gybrielle_Gacilo_Resume.pdf',
+      download: 'GYBRIELLE GACILO.pdf',
     });
     document.body.appendChild(a);
     a.click();
